@@ -87,14 +87,14 @@ let gameScores = [[78, 89], [45,89], [99,45]]
 // Create a variable called people which should be an array of 3 objects
 // Each object should have 3 properties: name (string), gender (string), height (number) in each array
 
-// Code here
+let people = [{name: "Bob", gender: "Male", height: 234}, {name: "Jan", gender: "Female", height: 43}, {name: "Joe", gender: "Male", height: 4343}]
 
 ////////////////// PROBLEM 11 ////////////////////
 
 // Create a variable called cowboy which should be an object
 // This object should have 3 properties: name (string), state (string), favoriteCountrySong (string)
 
-// Code here
+let cowboy = {name: "Ranger", state: "Texas", favoriteCountrySong: "All my exes live in Texas - George Strait"}
 
 ////////////////// PROBLEM 12 ////////////////////
 
@@ -120,26 +120,27 @@ function launch() {
 //   the object spaceship (provided for you)
 //   the function launch (provided for you)
 
-let dataTypes = [42, "meaning", true, [1,2,3,4,5], {spaceship}, launch]
+let dataTypes = [42, "meaning", true, [1,2,3,4,5], spaceship, launch]
 
 ////////////////// PROBLEM 13 ////////////////////
 
 // Edit the function called "sum" so that when it is invoked, it returns the sum of its parameters num1 and num2
 
 function sum(num1, num2) {
-  return; // Code here
+  return num1 + num2;
 }
 
 ////////////////// PROBLEM 14 ////////////////////
 
 // Create two variables number1 and number2 and assign them number values
 
-// Code here
+let number1 = 100;
+let number2 = 200;
 
 // Next, edit the function called "multiply" so that when it is invoked, it returns the result of multiplying number1 and number2
 
 function multiply() {
-  return; // Code here
+  return number1 * number2;
 }
 
 ////////////////// PROBLEM 15 ////////////////////
@@ -152,7 +153,7 @@ let food = 'pizza';
 // In your solution code, use template strings (not concatenation) and use the food variable provided
 
 function favFood() {
-  return; // Code here
+  return `My favorite food is ${food}`;
 }
 
 ////////////////// PROBLEM 16 ////////////////////
@@ -166,7 +167,7 @@ let theBoss;
 // the function assigns the value of theName to theBoss variable
 
 function assignName(name) {
-  // Code here
+  return theBoss = name;
 }
 
 ////////////////// PROBLEM 17 ////////////////////
@@ -183,7 +184,7 @@ const user = {
 // edit the function getName so that it accesses the name property of the user object and returns its value
 
 function getName(userObj) {
-  return; // Code here
+  return userObj.name;
 }
 
 ////////////////// PROBLEM 18 ////////////////////
@@ -218,14 +219,16 @@ const calendar = {
 // Make sure you are accessing it from the weekDays array of the calendar object
 
 function getWeekDay(calendar) {
-  return; // Code here
+  return calendar.weekDays[2];
 }
 
 ////////////////// PROBLEM 19 ////////////////////
 
 // Create a function called "fn" that takes in a parameter and returns that parameter
 
-// Code here
+function fn(param){
+  return param;
+}
 
 ////////////////// PROBLEM 20 ////////////////////
 
@@ -454,7 +457,13 @@ user2 = {
 // Use the if and else keywords in your solution
 // The arguments passed into makePurchase will always be numbers and will be changed during testing
 
-// Code here
+function makePurchase(priceOfItem){
+  if(priceOfItem <= user2.total){
+    user2.total -= priceOfItem;
+  } else {
+    return "not enough funds"
+  }
+}
 
 ////////////////// PROBLEM 34 ////////////////////
 
@@ -482,4 +491,12 @@ function sleep() {
 // Use the if and else keywords in your solution
 // The arguments passed into decisionMaker will always be true or false and will be changed during testing
 
-// Code here
+function decisionMaker(hungry, tired){
+  if(hungry && !tired){
+    return eat()
+  } else if (!hungry && tired) {
+    return sleep()
+  } else {
+    return "undecided"
+  }
+}
